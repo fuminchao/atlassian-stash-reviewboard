@@ -1,0 +1,21 @@
+
+@text-color-1: black;
+@text-color-2: #696C71;
+@text-color-3: #B0B1B3;
+@text-color-4: lighten(@text-color-3, 10%);
+@text-color-5: lighten(@text-color-4, 10%);
+
+// Usage `colorize(@{svg-spinner}, "white", "red")`
+@svgdataurl: ~`svgdataurl = function(a) {return 'data:image/svg+xml;utf8,' + a;}`;
+@colorize: ~`colorize = function(a) { var colors=arguments;return a.replace(/\{C(\d+)\}/g,function(x,y){ return colors[y] }); }`;
+@resize: ~`resize = function(svg, width, height){ return svg.replace(/width="\d+"/,"width=\""+width+"\"").replace(/height="\d+"/,"height=\""+height+"\"") }`;
+
+
+.docked( @top:0, @right:0, @bottom:0, @left:0 ){
+  position:absolute;
+  display:block;
+  top:@top;
+  bottom:@bottom;
+  left:@left;
+  right:@right;
+}

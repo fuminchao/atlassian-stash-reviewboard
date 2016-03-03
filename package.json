@@ -1,0 +1,32 @@
+{
+  "name": "atlassian-stash-reviewboard",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-start": "supervisor -- server.coffee --stash=https://stash.bbpd.io"
+  },
+  "author": "fuminchao <fuminchao@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "latest",
+    "babel-plugin-transform-es2015-modules-amd": "latest",
+    "babel-preset-es2015": "latest",
+    "babel-preset-stage-2": "latest",
+    "coffee-script": "latest",
+    "compression": "latest",
+    "cson": "latest",
+    "express": "latest",
+    "express-http-proxy": "latest",
+    "express-session": "latest",
+    "jade": "latest",
+    "json-format": "latest",
+    "less": "latest",
+    "less-plugin-autoprefix": "latest",
+    "livereload": "latest",
+    "promise": "latest",
+    "requirejs": "latest",
+    "shell-arguments": "latest"
+  }
+}

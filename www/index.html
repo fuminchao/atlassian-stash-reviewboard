@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+    <meta name="author" content="fuminchao@outlook.com" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no, address=no" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title></title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <div id="application"></div>
+
+    <script src="//cdn.jsdelivr.net/es6-promise/3.1.2/es6-promise.min.js"></script>
+    <script src="//cdn.jsdelivr.net/requirejs/2.1.22/require.min.js"></script>
+    <script>
+    requirejs.config({
+      baseUrl: 'js',
+      urlArgs: '', //'rnd='+new Date().getTime(),
+      paths: {
+        'jquery'     : "//cdn.jsdelivr.net/jquery/2.2.0/jquery.min",
+        'bootstrap'  : "//cdn.jsdelivr.net/bootstrap/3.3.6/js/bootstrap.min",
+        'lodash'     : "//cdn.jsdelivr.net/lodash/4.5.0/lodash.min",
+        'vue'        : "//cdn.jsdelivr.net/vue/1.0.16/vue.min",
+        'vue-router' : "//cdn.jsdelivr.net/vue.router/0.7.11/vue-router.min",
+      },
+      shim: {
+        "bootstrap" : {
+          "deps" :[
+            'jquery',
+            'css!//cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.min.css',
+          ]
+        }
+      },
+      map: {
+        "*": {
+          "css":"//cdn.jsdelivr.net/require-css/0.1.8/css.min.js"
+        }
+      }
+    });
+
+    window.__global__ = {};
+    requirejs(['bootstrap','bootloader']);
+    </script>
+    <script>
+    function develop(cfg){
+
+      requirejs(['vue', 'jquery'],function(Vue, $){
+
+        Vue.config.async = false;
+        Vue.config.debug = true;
+
+        [cfg.livereload].forEach(function(jssrc, jsindex){
+          var scriptNode = $(document.createElement('script'));
+          scriptNode.attr('src', jssrc);
+          $('body').append(scriptNode);
+        });
+      });
+    }
+    </script>
+    <script type="text/javascript" src="js/debug.js?fn=develop"></script>
+    <!-- weinre -->
+  </boby>
+</html>

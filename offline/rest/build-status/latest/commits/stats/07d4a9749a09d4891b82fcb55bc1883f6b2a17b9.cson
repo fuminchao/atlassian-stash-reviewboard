@@ -1,0 +1,15 @@
+{
+  "successful": 1,
+  "inProgress": 0,
+  "failed": 0,
+  "results": [
+    {
+      "state": "INPROGRESS",
+      "key": "git-b2-assessment_feature_SLASH_ULTRA-11163-patch-goal-alignments-to-assessment-question-commit-http:\\/\\/jenkins.bbpd.io\\/",
+      "name": "git-b2-assessment_feature_SLASH_ULTRA-11163-patch-goal-alignments-to-assessment-question-commit #2",
+      "url": "http://jenkins.bbpd.io/job/git-b2-assessment_feature_SLASH_ULTRA-11163-patch-goal-alignments-to-assessment-question-commit/2/",
+      "description": "built by Jenkins @ http://jenkins.bbpd.io/",
+      "dateAdded": 1456118308519
+    }
+  ]
+}

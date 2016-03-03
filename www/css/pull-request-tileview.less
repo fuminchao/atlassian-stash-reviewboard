@@ -1,0 +1,145 @@
+@import "-variables";
+@import "-icons";
+
+.pull-request-tileview {
+
+  font-size:.7rem;
+
+  position: relative;
+  background-color:white;
+  //border-radius:.3rem;
+  padding:.6rem .6rem;
+  padding-left:1rem;
+  overflow:hidden;
+
+  &:before {
+    .docked(@right:auto);
+    content:"";
+    display:block;
+    width:.4rem;
+    background-color:transparent;
+    //border-radius:.3rem 0 0 .3rem;
+  }
+
+  &.OPEN:before {
+    background-color: #4a6785;
+  }
+  &.MERGED:before {
+    background-color: #14892c;
+  }
+  &.DECLINED:before {
+    background-color: #d04437;
+  }
+
+  > div {
+    padding-top:.5rem;
+    padding-bottom:.5rem;
+    position:relative;
+
+    &:before {
+      content:"";
+      .docked(@bottom:auto);
+      height:1px;
+      background-color: lighten(@text-color-4, 10%);
+    }
+
+    &:first-child {
+      padding-top:0;
+      &:before {
+        display:none;
+      }
+    }
+    &:last-child { padding-bottom:0; }
+  }
+
+  a {
+    color:@text-color-2;
+    word-spacing: 0;
+  }
+
+  a.sr-keep-eye {
+
+    display:inline-block;
+    width:18px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('`svgdataurl(colorize( @{svg-materialicons-remove_red_eye}, "@{text-color-5}"))`');
+
+    &:after {
+      content:'.';
+      color:transparent;
+    }
+    &:active, &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .sr-pr-brief > a {
+    margin-left:.2rem;
+
+    &:first-child { margin-left:0; }
+  }
+
+  a.sr-pr-title {
+    font-weight: bold;
+  }
+
+  a.sr-pr-location {
+    color:@text-color-3;
+  }
+
+  .sr-project:after {
+    content:"/";
+    margin:0 .2rem;
+  }
+  .sr-id:after {
+    content:"-";
+    margin:0 .2rem;
+  }
+
+  .sr-branches {
+    padding-left: .8rem;
+    position: relative;
+    color: @text-color-4;
+
+    &:after {
+      content:"";
+      .docked(@right:auto);
+      width:.8rem;
+      background-image: url('`svgdataurl(colorize( @{svg-materialicons-git-compare}, "@{text-color-3}"))`');
+      background-size: 82%;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+
+  .sr-pr-details {
+    display: flex;
+    justify-content: flex-start;
+
+    > div {
+      width: 25%;
+
+      > div:first-child {
+        font-size:.9em;
+        color:@text-color-3;
+      }
+
+      > div:last-child {
+        font-weight: bold;
+
+        &, a {
+          color: @text-color-2;
+        }
+      }
+    }
+  }
+
+  &.watched {
+    a.sr-keep-eye {
+      background-image: url('`svgdataurl(colorize( @{svg-materialicons-remove_red_eye}, "@{text-color-2}"))`');
+    }
+  }
+}

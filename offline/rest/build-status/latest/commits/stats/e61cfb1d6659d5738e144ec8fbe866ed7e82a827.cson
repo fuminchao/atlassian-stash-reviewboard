@@ -1,0 +1,11 @@
+"successful": 1,
+"inProgress": 0,
+"failed": 0,
+"results": [{
+    "state": "FAILED",
+    "key": "git-b2-apis-goal-api_feature_SLASH_ULTRA-11163-patch-goal-alignments-commit-http:\\/\\/jenkins.bbpd.io\\/",
+    "name": "git-b2-apis-goal-api_feature_SLASH_ULTRA-11163-patch-goal-alignments-commit #1",
+    "url": "http://jenkins.bbpd.io/job/git-b2-apis-goal-api_feature_SLASH_ULTRA-11163-patch-goal-alignments-commit/1/",
+    "description": "built by Jenkins @ http://jenkins.bbpd.io/",
+    "dateAdded": 1456116077842
+}]
